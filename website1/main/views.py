@@ -9,3 +9,6 @@ def about(request):
 
 def new(request):
     return render(request,'main/new.html')
+
+def exampleHTML(request):
+    return render(request,'main/exampleHTML.html')
