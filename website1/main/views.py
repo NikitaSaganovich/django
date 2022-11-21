@@ -4,7 +4,8 @@ from .models import Task
 
 def index(request):
     task = Task.objects.all()
-    return render(request,'main/index.html', {'title': 'Главная страница', 'tasks': 'title'})
+    return render(request,'main/index.html', {'title': 'Задачи', 'task': 'Купить хлеб',
+                                                         'date':'17.01', 'name':'Имя'})
 
 def about(request):
     return render(request,'main/about.html')
