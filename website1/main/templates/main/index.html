@@ -6,14 +6,15 @@
 
 
 {% block content %}
-<h1>Главная страница</h1>
+    <h1>Главная страница</h1>
+    {% if tasks %}
+    {% for a in tasks %}
     <div class="alert alert-warning mt-2">
-        <h3>{{ title }}</h3>
-        <p>{{ task }}</p>
+        <h3>{{ a.title }}</h3>
+        <p>{{ a.tasks }}</p>
     </div>
-<h1>Вывел второе поле из базы данных для дз</h1>
-    <div class="alert alert-warning mt-2">
-        <h3>{{ date }}</h3>
-        <p>{{ name }}</p>
-    </div>
+    {% endfor %}
+    {% else %}
+        <p>У вас нету записей</p>
+    {% endif %}
 {% endblock %}

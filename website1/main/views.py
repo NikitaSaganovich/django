@@ -3,9 +3,8 @@ from django.http import HttpResponse
 from .models import Task
 
 def index(request):
-    task = Task.objects.all()
-    return render(request,'main/index.html', {'title': 'Задачи', 'task': 'Купить хлеб',
-                                                         'date':'17.01', 'name':'Имя'})
+    tasks = Task.objects.order_by('-id')
+    return render(request,'main/index.html', {'title': 'Главная страница сайта' , 'tasks': tasks })
 
 def about(request):
     return render(request,'main/about.html')
@@ -15,3 +14,6 @@ def new(request):
 
 def exampleHTML(request):
     return render(request,'main/exampleHTML.html')
+
+def create(request):
+    return render(request,'main/create.html')
